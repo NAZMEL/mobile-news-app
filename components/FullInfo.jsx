@@ -1,20 +1,19 @@
 import React from "react";
-import { StyleSheet, Text, View, Button } from "react-native";
+import {Text, View, Image } from "react-native";
+import {styles} from "./../styles/style";
 
 
 export default FullInfo = ({route}) =>{
     return (
         <View>
+             <Image source={{
+                            width: '100%',
+                            height: 100,
+                            uri: route.params.img,
+                        }}/>
             <Text style={styles.title}>{route.params.name}</Text> 
-            <Text>{route.params.full}</Text> 
+            <Text style={styles.anons}>{route.params.full}</Text> 
         </View>
     )
 }
 
-const styles = StyleSheet.create({
-    title: {
-        fontSize: 20,
-        color: "#333",
-        textAlign: 'center',
-      },
-})
